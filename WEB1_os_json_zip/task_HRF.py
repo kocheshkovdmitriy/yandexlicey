@@ -10,3 +10,4 @@ def human_read_format(size):
 if __name__ == '__main__':
     for size in [1023, 1024, 2040, 15000, 10 ** 7, 10 ** 10]:
         print(f'{size}: {human_read_format(size)}')
+

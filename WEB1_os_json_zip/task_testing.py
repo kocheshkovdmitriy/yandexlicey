@@ -10,7 +10,7 @@ for i, verdict in enumerate(sys.stdin.readlines()):
     for el in data["scoring"]:
         if i + 1 in el['required_tests']:
             if verdict.strip() == 'ok':
-                total_result += el['points']
+                total_result += el['points'] // len(el['required_tests'])
             break
 
 print(total_result)
