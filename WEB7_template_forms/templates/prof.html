@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+        {% if "инженер" in prof or "строитель" in prof %}
+            <h2 class="h"> Инженерные тренажеры </h2>
+
+        {% else %}
+            <h2> Научные симуляторы </h2>
+        {% endif %}
+
+{% endblock %}

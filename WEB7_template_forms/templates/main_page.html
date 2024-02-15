@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Главная Страница</h1>
+    <p>Тут будет содержание страницы</p>
+    {% for el in list %}
+        {% if el%2 == 0 %}
+            <p>{{loop.index}} Квадрат числа {{ el }} равен: {{ el**2 }}</p>
+        {% else %}
+            <p>{{loop.index}} Куб числа {{ el }} равен: {{ el**3 }}</p>
+        {% endif %}
+    {% endfor %}
+{% endblock %}
+
+
