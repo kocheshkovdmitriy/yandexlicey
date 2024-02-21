@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{user.name}} {{user.lastname}}</title>
+</head>
+<body>
+<p>User: {{user.name}} {{user.lastname}}</p>
+<p>Having news:</p>
+{% for new in user.news %}
+    <p>{{new.title}}</p>
+    <p>{{new.content}}</p>
+{% endfor %}
+</body>
+</html>
