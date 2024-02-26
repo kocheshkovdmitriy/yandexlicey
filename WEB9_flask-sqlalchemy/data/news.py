@@ -12,9 +12,11 @@ class News(SqlAlchemyBase):
     content = sqlalchemy.Column(sqlalchemy.String, nullable=True)
     created_date = sqlalchemy.Column(sqlalchemy.DateTime, default=datetime.datetime.now)
 
-    #OneToOne, ForeignKey, ManyToMany
-    user_name = sqlalchemy.Column(sqlalchemy.String, sqlalchemy.ForeignKey("users.name"))
+    user_id = sqlalchemy.Column(sqlalchemy.Integer, sqlalchemy.ForeignKey("users.id"))
     user = orm.relationship('User')
+    categories = orm.relationship("Category",
+                                  secondary="news_to_category",
+                                  backref="news")
 
     def __repr__(self):
         return f'"{self.title}" author: {self.user.name}{self.user.lastname}'
