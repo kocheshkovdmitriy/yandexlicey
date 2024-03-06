@@ -1,6 +1,5 @@
 from flask import jsonify
 from flask_restful import reqparse, Resource, abort
-
 from WEB12_API_RestFull.data import db_session
 from WEB12_API_RestFull.data.news import News
 
@@ -49,5 +48,16 @@ class NewsResource(Resource):
         session = db_session.create_session()
         news = session.query(News).get(news_id)
         session.delete(news)
+        session.commit()
+        return jsonify({'success': 'OK'})
+
+    def put(self, news_id):
+        abort_if_news_not_found(news_id)
+        args = parser.parse_args()
+        session = db_session.create_session()
+        news = session.query(News).get(news_id)
+        news.title = args['title']
+        news.content = args['content']
+        news.user_id = args['user_id']
         session.commit()
         return jsonify({'success': 'OK'})

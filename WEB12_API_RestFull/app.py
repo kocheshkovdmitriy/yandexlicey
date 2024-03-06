@@ -1,8 +1,6 @@
-from flask import Flask, jsonify
-from flask_restful import reqparse, abort, Api, Resource
+from flask import Flask
+from flask_restful import Api
 from WEB12_API_RestFull.data import db_session, news_resources
-from WEB12_API_RestFull.data.news import News
-from WEB12_API_RestFull.data.news_resources import abort_if_news_not_found
 
 app = Flask(__name__)
 api = Api(app)
