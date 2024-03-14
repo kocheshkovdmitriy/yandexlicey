@@ -4,19 +4,13 @@ app = Flask(__name__)
 
 data = {1: {'name': 'user1',
             'last_name': 'user11',
-            'age': 18},
-        2: {'name': 'user2',
+            'age': 18}, 2: {'name': 'user2',
             'last_name': 'user22',
-            'age': 22},
-
-        3: {'name': 'user3',
+            'age': 22}, 3: {'name': 'user3',
             'last_name': 'user33',
-            'age': 10},
-
-        4: {'name': 'user4',
+            'age': 10}, 4: {'name': 'user4',
             'last_name': 'user44',
-            'age': 48},
-        }
+            'age': 48},}
 
 @app.route("/")
 def main_page():
